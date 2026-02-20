@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo | login</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <!-- daisy + taliwind -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- fontawesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <!-- font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    *{
+      font-family: "Outfit", sans-serif;  
+    }
+  </style>
+
+</head>
+<body class="min-h-screen max-w-md bg-base-300 mx-auto">
+
+  <div class="max-w-[263px]  mx-auto pt-[210px]">
+    <img src="assets/Logo-full.png" alt="logo image">
+  </div>
+
+  <div class="mt-8 rounded-xl p-8 space-y-4">
+     <div class="card bg-base-200 w-full max-w-sm shrink-0 shadow-xl mx-auto">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label font-medium text-neutral">Mobile Number</label>
+          <input maxlength="11" id="input-number" type="tel" class="input rounded-full bg-base-200" placeholder="Enter Your Number" />
+          <label class="label font-medium text-neutral">4 Digit Pin</label>
+          <input maxlength="4" id="input-pin" type="password" class="input rounded-full bg-base-200" placeholder="Enter 4 Digit Pin" />
+          
+          <button id="login-btn" class="btn btn-primary rounded-full mt-4">Login</button>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  
+
+   <script src="script/login.js"></script> 
+</body>
+</html>
