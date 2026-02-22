@@ -1,4 +1,4 @@
-//console.log('conected')
+console.log('conected')
 
 document.getElementById('cashout-btn').addEventListener('click',function(){
     const cashoutNumber = getValueFormInput ('cashout-number');
@@ -6,12 +6,10 @@ document.getElementById('cashout-btn').addEventListener('click',function(){
 
     const cashoutAmount =getValueFormInput ('cashout-amount');
     console.log(cashoutAmount);
-
-    const elementBlance =document.getElementById('blance');
-    const blance =elementBlance.innerText;
-
-     const newBlance=Number(blance) - Number(cashoutAmount);
-    // console.log(newBlance)
+// current blance
+   const currentBlance=getBlance ('blance');
+     const newBlance=currentBlance - Number(cashoutAmount);
+     //console.log(newBlance)
      if(newBlance < 0){
         alert('Invaild Blance');
         return;
@@ -22,7 +20,10 @@ document.getElementById('cashout-btn').addEventListener('click',function(){
 
      if(inputPin === '0000'){
         alert('Cashout succesfull');
-        elementBlance.innerText=newBlance;
+
+         setBlance (newBlance);
+        //setBlance (newBlance);
+        //document.getElementById('blance').innerText=newBlance;
      console.log(newBlance)
 
      }else{
