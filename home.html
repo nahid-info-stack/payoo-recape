@@ -3,9 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Payoo | Home</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <!-- daisy + taliwind -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- fontawesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <!-- font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    *{
+      font-family: "Outfit", sans-serif;  
+    }
+  </style>
+
 </head>
-<body>
-    Wellcome
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+    <header class="pt-11 p-[10px] bg-base-100 border-b-2 border-gray-300">
+        <section class="flex justify-between items-center ">
+            <div class="left flex gap-2">
+            <div class="logo w-[60px]">
+                <img src="assets/logo.png" alt="">
+
+            </div>
+            <div>
+                <h2 class="text-[18px] font-extrabold">$<span id="blance">45000</span></h2>
+                <p class="text-neutral/50">Available Balance</p>
+            </div>
+
+        </div>
+        <div class="right ">
+            
+            <a href="/index.html"   class="btn btn-soft text-neutral/50">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> 
+                <p>Logout</p>
+             </a>
+            
+
+        </div>
+        </section>
+    </header>
+    <section class="mt-8 w-11/12 mx-auto space-y-4">
+        <h2 class="text-[24px] font-bold leading-[30px]">Welcome to Pay<span class="text-primary">oo</span></h2>
+        <p class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+    </section>
+    <section class="w-11/12 mx-auto mt-6 grid grid-cols-3 gap-4">
+        <button class=" py-5 px-[10px]  btn flex-col h-full btn-primary rounded-[12px] btn-soft">
+            <img src="assets/opt-1.png" alt="">
+            <p>Add Money</p>
+        </button>
+
+        <button class=" py-5 px-[10px]  btn flex-col h-full btn-primary rounded-[12px] btn-soft">
+            <img src="assets/opt-2.png" alt="">
+            <p>Cashout</p>
+        </button>
+
+        <button class=" py-5 px-[10px]  btn flex-col h-full btn-primary rounded-[12px] btn-soft">
+            <img src="assets/opt-3.png" alt="">
+            <p>Transfer Money</p>
+        </button>
+
+        <button class=" py-5 px-[10px]  btn flex-col h-full btn-primary rounded-[12px] btn-soft">
+            <img src="assets/opt-4.png" alt="">
+            <p>Get Bonus</p>
+        </button>
+
+        <button class=" py-5 px-[10px]  btn flex-col h-full btn-primary rounded-[12px] btn-soft">
+            <img src="assets/opt-5.png" alt="">
+            <p>Pay Bill</p>
+        </button>
+
+        <button class=" py-5 px-[10px]  btn flex-col h-full btn-primary rounded-[12px] btn-soft">
+            <img src="assets/opt-6.png" alt="">
+            <p>Transactions</p>
+        </button>
+         
+
+    </section>
+
+    <section class=" w-11/12 mx-auto mt-8 pb-8 ">
+        <h2 class="text-[18px] font-semibold text-neutral mb-4">Cash Out</h2>
+
+        <div class=" rounded-xl  space-y-8">
+     <div class="card bg-base-100   shadow-xl">
+      <div class="card-body ">
+        <fieldset class="fieldset">
+          <label class="label font-medium text-neutral ">Agent Number</label>
+          <input maxlength="11" id="cashout-number" type="tel" class="input rounded-full bg-base-200 w-full " placeholder="Enter 11digite  Number" />
+
+          <label class="label font-medium text-neutral">Amount</label>
+          <input maxlength="11" id="cashout-amount" type="number" class="input rounded-full bg-base-200 w-full" placeholder="Enter amount to withdraw" />
+
+          <label class="label font-medium text-neutral"> Pin Number</label>
+          <input maxlength="4" id="cashout-pin" type="password" class="input rounded-full bg-base-200 w-full" placeholder="Enter 4 Digit Pin Number" />
+          
+          <button id="cashout-btn" class="btn btn-primary rounded-full mt-4">withdraw Money</button>
+        </fieldset>
+      </div>
+    </div>
+    </section>
+    <script src="script/machine.js"></script>
+    <script src="script/home.js"></script>
+    <!-- <script>
+        //console.log('check');
+
+        document.getElementById('cashout-btn').addEventListener('click',function (){
+            //console.log('out');
+
+            // get agent number
+            const agentNumberInput = document.getElementById('cashout-number');
+            const agentNumber=agentNumberInput.value;
+            if(agentNumber.length != 11){
+                alert('Invaild agent number');
+                return;
+            }
+            console.log(agentNumber);
+
+            // get amount
+            const cashoutInputAmount =document.getElementById('cashout-amount');
+            const cashoutAmount=cashoutInputAmount.value;
+            console.log(cashoutAmount);
+
+            // get current blance
+            const currentBlanceElement=document.getElementById('blance');
+            const blance = currentBlanceElement.innerText;
+            console.log(blance);
+
+            // calculate blance
+            const newBlance = Number(blance) - Number(cashoutAmount);
+
+            // set blance 
+            
+
+            // true ::: succesfull
+            if(newBlance < 0){
+                alert('Insufarent Blance');
+                return;
+            }
+
+            // get the pin
+            const cashoutInputPin=document.getElementById('cashout-pin');
+            const pin = cashoutInputPin.value;
+            console.log('Pin:',pin);
+
+            if(pin == '0000'){
+                alert('Cashout Succesfull');
+                 currentBlanceElement.innerText=newBlance;
+            
+                console.log('new tk:',newBlance);
+                
+            }else{
+                alert('Invaild Pin');
+                return;
+            }
+
+        });
+
+    </script> -->
 </body>
 </html>
